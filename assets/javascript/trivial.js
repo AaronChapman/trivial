@@ -1,15 +1,17 @@
+/* copyright - aaron chapman, oylo.info - 2018*/
+
 /* objets for each question & answer set */
-var trivia_array = [{question: "what kind of shape has five sides?", 
-                     answer_1: "circle", 
-                     answer_2: "square", 
+var trivia_array = [{question: "what kind of shape has five points?", 
+                     answer_1: "cube", 
+                     answer_2: "triangle", 
                      answer_3: "pentagram", 
-                     answer_4: "triangle",
+                     answer_4: "halo",
                      correct_answer: "answer_3"}, 
                     {question: "what color is between violet and orange on the color wheel?", 
-                     answer_1: "blue", 
-                     answer_2: "orange", 
-                     answer_3: "green", 
-                     answer_4: "red",
+                     answer_1: "bruised blue", 
+                     answer_2: "magma orange", 
+                     answer_3: "zombie green", 
+                     answer_4: "devlish red",
                      correct_answer: "answer_4"}, 
                     {question: "choose the first option", 
                      answer_1: "yes, master", 
@@ -25,26 +27,26 @@ var trivia_array = [{question: "what kind of shape has five sides?",
                      correct_answer: "answer_4"},
                     {question: "what number is twice the value of three threes strung together?", 
                      answer_1: "777º C", 
-                     answer_2: "…∞§•§∞…", 
-                     answer_3: "like, 420?", 
-                     answer_4: "666",
+                     answer_2: ".∞•§•∞.", 
+                     answer_3: "uhh, like 420?", 
+                     answer_4: "🔥 6 🔥 6 🔥 6 🔥",
                      correct_answer: "answer_4"},
                     {question: "choose well. you never know when your life may depend on it...", 
                      answer_1: "? ? ?", 
                      answer_2: "? ? ? ?", 
-                     answer_3: "? ? ? ?", 
+                     answer_3: "? ¿ ? ?", 
                      answer_4: "? ? ?",
                      correct_answer: "answer_100"},
-                    {question: "who is the greatest living legend?", 
-                     answer_1: "tupac", 
-                     answer_2: "biggie", 
-                     answer_3: "cobain", 
+                    {question: "who is the greatest guitarist of all time?", 
+                     answer_1: "hendrix", 
+                     answer_2: "beck", 
+                     answer_3: "clapton", 
                      answer_4: "beezlebub",
                      correct_answer: "answer_4"},
                     {question: "is this game fun?", 
                      answer_1: "no", 
                      answer_2: "no", 
-                     answer_3: "yes", 
+                     answer_3: "yes, master", 
                      answer_4: "no",
                      correct_answer: "answer_3"},
                     {question: "is the answer to this question option 2?", 
@@ -99,6 +101,9 @@ function set_new_question () {
 
         if ($(`#${temp_name}`).attr('id') === current_trivia_question.correct_answer)
             current_correct_answer = $(`#${temp_name}`).text();
+
+        if (current_trivia_question.correct_answer === "answer_100")
+            current_correct_answer = "any answer";
     }
 }
 
